@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+	{% load staticfiles %}
+	<!-- <link rel="stylesheet" type="text/css" href="{% static '/style.css' %}"/> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<form method="POST" class="post-form" action="/emp">
+		{% csrf_token %}
+
+	<div class="container">
+		<br>
+		<div class="form-group row">
+		<label class="col-sm-1 col-form-lable"></label>	
+			<div class="col-sm-4">
+				<h3>Enter Details</h3>
+			</div>
+		</div>
+	
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-lable">Employee ID : </label>
+			<div class="col-sm-4">
+				{{ form.eid }}
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-lable">Employee Name : </label>
+			<div class="col-sm-4">
+				{{ form.ename }}
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-lable">Employee Email : </label>
+			<div class="col-sm-4">
+				{{ form.eemail }}
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-lable">Employee Contact : </label>
+			<div class="col-sm-4">
+				{{ form.econtact }}
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+
+</form>
+</body>
+</html>

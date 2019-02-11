@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Record</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" type="text/css" href="{% static '/style.css' %}"/> -->
+</head>
+<body>
+	<div class="container">
+	<table class="table table-striped table-bordered table-sm">
+		<thead class="thead-dark">
+			<tr>
+				<th>Employee ID</th>
+				<th>Employee Name</th>
+				<th>Employee Email</th>
+				<th>Employee Contact</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for employee in employees %}
+			<tr>
+				<td>{{ employee.eid }}</td>
+				<td>{{ employee.ename }}</td>
+				<td>{{ employee.eemail }}</td>
+				<td>{{ employee.econtact }}</td>
+				<td>
+					<a href="/edit/{{ employee.id}}"><span class="glyphicon glyphicon-pencil">Edit</span></a> | 
+					<a href="/delete/{{ employee.id}}">Delete</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<center><a href="/emp" class="btn btn-primary">Add New Record</a></center>
+</div>
+</body>
+</html>
